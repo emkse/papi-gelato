@@ -17,7 +17,7 @@ berekeningHoorntjes = 0
 #prijzen 
 Geen = float(0.00)
 Bak = float(0.75)
-Bollen = float(1.10)
+Bollen = float(0.95)
 Horrentje = float(1.25)
 Sprelagroom = float(0.50)
 Sprinkles = float(0.30)
@@ -209,7 +209,7 @@ def stap3(keuze, Bollen):
         stap3(keuze, Bollen)    
 
 def bon(Bollen, Bakjes, Hoorntjes, keuze):
-    prijsBolletjes = float(1.15)
+    prijsBolletjes = float(0.95)
     prijsHorrentje = float(0.75)
     prijsBakjes = float(1.50)
     global berekeningBakje
