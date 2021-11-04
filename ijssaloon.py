@@ -17,7 +17,7 @@ berekeningHoorntjes = 0
 #prijzen 
 Geen = float(0.00)
 Bak = float(0.75)
-Bollen = float(0.95)
+Bollen = float(1.10)
 Horrentje = float(1.25)
 Sprelagroom = float(0.50)
 Sprinkles = float(0.30)
@@ -31,7 +31,7 @@ Zakelijk = "Zakelijk"
 zakelijk = "zakelijk"
 smaakA = 0
 smaakC = 0
-#smaakM = 0
+smaakM = 0
 smaakV = 0
 
 def snapdatniet():
@@ -56,10 +56,10 @@ def smaakZakelijk(liter,literNummer):
     while literNummer <= int(liter):
         global smaakA
         global smaakC
-        #global smaakM
+        global smaakM
         global smaakV
         if literNummer == 1:
-            smaakPerLiter = input("Welke smaak wilt u voor de " + str(literNummer) + "st liter? A) Aardbei, C) Chocolade, V) Vanille: ")
+            smaakPerLiter = input("Welke smaak wilt u voor de " + str(literNummer) + "st liter? A) Aardbei, C) Chocolade, V) Vanille M) Mint: ")
             if smaakPerLiter == "A" or smaakPerLiter == "a":
                 smaakA = smaakA + 1
                 literNummer = literNummer + 1
@@ -69,23 +69,23 @@ def smaakZakelijk(liter,literNummer):
             elif smaakPerLiter == "V" or smaakPerLiter == "v":
                 smaakV = smaakV + 1
                 literNummer = literNummer + 1
-            #elif smaakPerLiter == "M" or smaakPerLiter == "m":
-              #  smaakM = smaakM + 1
-               # literNummer = literNummer + 1
+            elif smaakPerLiter == "M" or smaakPerLiter == "m":
+                smaakM = smaakM + 1
+                literNummer = literNummer + 1
             else:
                 snapdatniet()
 
         else:
-            smaakPerLiter = input("Welke smaak wilt u voor de " + str(literNummer) + "de liter? A) Aardbei, C) Chocolade, V) Vanille: ")
+            smaakPerLiter = input("Welke smaak wilt u voor de " + str(literNummer) + "de liter? A) Aardbei, C) Chocolade, V) Vanille M) Mint: ")
             if smaakPerLiter == "A" or smaakPerLiter == "a":
                 smaakA = smaakA + 1
                 literNummer = literNummer + 1
             elif smaakPerLiter == "C" or smaakPerLiter == "c":
                 smaakC = smaakC + 1
                 literNummer = literNummer + 1
-            #elif smaakPerLiter == "M" or smaakPerLiter == "m":
-               # smaakM = smaakM + 1
-                #literNummer = literNummer + 1
+            elif smaakPerLiter == "M" or smaakPerLiter == "m":
+                smaakM = smaakM + 1
+                literNummer = literNummer + 1
             elif smaakPerLiter == "V" or smaakPerLiter == "v":
                 smaakV = smaakV + 1
                 literNummer = literNummer + 1
@@ -96,14 +96,14 @@ def smaakZakelijk(liter,literNummer):
 def bonZakelijk():
     global smaakA
     global smaakC
-    #global smaakM
+    global smaakM
     global smaakV
     prijsPerLiter = 9.80
     totaalPrijsLiterA = int(smaakV) * prijsPerLiter
     totaalPrijsLiterC = int(smaakC) * prijsPerLiter
-    #totaalPrijsLiterM = int(smaakM) * prijsPerLiter
+    totaalPrijsLiterM = int(smaakM) * prijsPerLiter
     totaalPrijsLiterV = int(smaakV) * prijsPerLiter
-    btw = 0.06
+    btw = 0.09
     totaalPrijs = totaalPrijsLiterA + totaalPrijsLiterC + totaalPrijsLiterV
     btwTotaalPrijs = totaalPrijs * btw
     print("-----------['Papi Gelato']-----------")
@@ -112,13 +112,13 @@ def bonZakelijk():
         print("Liter(Aardbei)       " + str(smaakA) + " x €" + str('{0:.2f}'.format(prijsPerLiter)) + "   = €" + str('{0:.2f}'.format(totaalPrijsLiterA)))
     if smaakC > 0:     
         print("Liter(Chocolade)     " + str(smaakC) + " x €" + str('{0:.2f}'.format(prijsPerLiter)) + "   = €" + str('{0:.2f}'.format(totaalPrijsLiterC)))
-    #if smaakM > 0:
-    #    print("Liter(Munt)          " + str(smaakM) + " x €" + str('{0:.2f}'.format(prijsPerLiter)) + "   = €" + str('{0:.2f}'.format(totaalPrijsLiterM)))
+    if smaakM > 0:
+        print("Liter(Munt)          " + str(smaakM) + " x €" + str('{0:.2f}'.format(prijsPerLiter)) + "   = €" + str('{0:.2f}'.format(totaalPrijsLiterM)))
     if smaakV > 0:
         print("Liter(Vanille)       " + str(smaakV) + " x €" + str('{0:.2f}'.format(prijsPerLiter)) + "   = €" + str('{0:.2f}'.format(totaalPrijsLiterV)))
     print("                                 ---------")
     print("Totaal                           = €" + str('{0:.2f}'.format(totaalPrijs)))
-    print("Btw (6%)                         = €" + str('{0:.2f}'.format(btwTotaalPrijs))) 
+    print("Btw (9%)                         = €" + str('{0:.2f}'.format(btwTotaalPrijs))) 
 
 
 
@@ -126,7 +126,7 @@ def bonZakelijk():
 def bollensmaak():
     Bollen = input("Hoeveel bolletjes wilt u?")
     Smaak = input()
-    if Smaak == "Chocolade" or "Vanille" or "Aardbei":
+    if Smaak == "Chocolade" or "Vanille" or "Aardbei" or "Mint":
         print("Toppings: (Geen) | (Slagroom) | (Sprinkels | (CaramelSaus)")
         Topping = input()
         if Topping == "Slagroom":
@@ -163,8 +163,8 @@ def smaken(Bollen):
     x = 0
     while x < int(Bollen):
         x += 1
-        keuzeSmaak = input('Welke smaak wilt u voor bolletje nummer ' + str(x) + ' ? A Aardbei, C Chocolade of V Vanille? ').lower()
-        if keuzeSmaak != 'a' and keuzeSmaak != 'c' and keuzeSmaak != 'v':
+        keuzeSmaak = input('Welke smaak wilt u voor bolletje nummer ' + str(x) + ' ? A Aardbei, C Chocolade, M Munt of V Vanille? ').lower()
+        if keuzeSmaak != 'a' and keuzeSmaak != 'c' and keuzeSmaak != 'm' and keuzeSmaak != 'v':
             x -= 1
             print('Sorry dat snap ik niet... ')
 
@@ -209,7 +209,7 @@ def stap3(keuze, Bollen):
         stap3(keuze, Bollen)    
 
 def bon(Bollen, Bakjes, Hoorntjes, keuze):
-    prijsBolletjes = float(0.95)
+    prijsBolletjes = float(1.10)
     prijsHorrentje = float(0.75)
     prijsBakjes = float(1.50)
     global berekeningBakje
