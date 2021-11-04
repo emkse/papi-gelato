@@ -35,7 +35,7 @@ smaakM = 0
 smaakV = 0
 
 def snapdatniet():
-    print("Sorry dat snap ik niet...")
+    print("Sorry dat is geen optie die we aanbieden...")
 
 def doelgroep():
     doelgroep = input("bent u zakelijk of particulier?")
