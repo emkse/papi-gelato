@@ -103,7 +103,7 @@ def bonZakelijk():
     totaalPrijsLiterC = int(smaakC) * prijsPerLiter
     #totaalPrijsLiterM = int(smaakM) * prijsPerLiter
     totaalPrijsLiterV = int(smaakV) * prijsPerLiter
-    btw = 0.09
+    btw = 0.06
     totaalPrijs = totaalPrijsLiterA + totaalPrijsLiterC + totaalPrijsLiterV
     btwTotaalPrijs = totaalPrijs * btw
     print("-----------['Papi Gelato']-----------")
@@ -118,7 +118,7 @@ def bonZakelijk():
         print("Liter(Vanille)       " + str(smaakV) + " x €" + str('{0:.2f}'.format(prijsPerLiter)) + "   = €" + str('{0:.2f}'.format(totaalPrijsLiterV)))
     print("                                 ---------")
     print("Totaal                           = €" + str('{0:.2f}'.format(totaalPrijs)))
-    print("Btw (9%)                         = €" + str('{0:.2f}'.format(btwTotaalPrijs))) 
+    print("Btw (6%)                         = €" + str('{0:.2f}'.format(btwTotaalPrijs))) 
 
 
 
